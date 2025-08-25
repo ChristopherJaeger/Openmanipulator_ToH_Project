@@ -106,4 +106,5 @@ RUN echo 'source /opt/ros/${ROS_DISTRO}/setup.bash' >> /root/.bashrc \
     && echo 'source /catkin_ws/install/setup.bash' >> /root/.bashrc
 
 # Standard: interaktive Shell; ggf. eigenes Startskript setzen
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]
