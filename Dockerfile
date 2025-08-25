@@ -12,23 +12,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential cmake git python3-pip python3-rosdep python3-catkin-tools \
     && rm -rf /var/lib/apt/lists/*
 
-# rosdep vorbereiten
-RUN rosdep init || true
+# rosdep vorbereiten (ohne rosdep init)
 RUN rosdep update
 
 # Quellcode reinkopieren
 COPY src/ /catkin_ws/src/
 
 # Systemabhängigkeiten deiner Pakete installieren
-# (nutzt package.xml; ignoriert Pakete, die schon da sind)
 RUN apt-get update && rosdep install --from-paths src --ignore-src -r -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Catkin-Build mit Install-Space (kleiner als build+devel)
+# Catkin-Build mit Debug-Logs (zeigt dir die echte Fehlermeldung)
 SHELL ["/bin/bash", "-lc"]
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && catkin config --extend /opt/ros/${ROS_DISTRO} --install \
-    && catkin build --no-status --cmake-args -DCMAKE_BUILD_TYPE=Release
+    && catkin build --summarize --verbose --no-status --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 # ============ STAGE 2: RUNTIME (schlank) ============
 FROM ros:noetic-ros-base
