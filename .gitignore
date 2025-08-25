@@ -1,0 +1,49 @@
+# ROS/Catkin
+build/
+devel/
+install/
+log/
+logs/
+.catkin_tools/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Daten & Ergebnisse
+runs/
+yolo_results/
+train_yolo/
+datasets/
+data/
+outputs/
+artifacts/
+checkpoints/
+*.pt
+*.onnx
+*.engine
+*.plan
+*.bag
+*.bag.active
+
+# Videos/Bilder (falls nicht versionieren)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,78 @@
+# VCS & Meta
+.git
+.gitignore
+.github
+.gitattributes
+.gitmodules
+
+# Betriebssystem-/Editor-Müll
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode
+.idea
+
+# Python/ROS-Build-Artefakte
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Catkin/ROS Workspace-Artefakte (werden im Container gebaut)
+build/
+devel/
+install/
+log/
+logs/
+.catkin_tools/
+
+# Notebooks & Reports (nur wenn nicht im Image gebraucht)
+notebooks/
+reports/
+
+# Große Daten & Ergebnisse (zur Laufzeit mounten)
+data/
+datasets/
+runs/
+yolo_results/
+train_yolo/
+*.pt
+*.onnx
+*.engine
+*.plan
+
+# Videos/Bilder (falls nicht im Image benötigt)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.png
+*.jpg
+*.jpeg
+*.tiff
+my_scripts/**/*.mp4
+my_scripts/**/*.avi
+
+# ROS-Bagfiles
+*.bag
+*.bag.active
+*.bag.orig
+
+# Cache/Temp
+.cache/
+tmp/
+temp/
+__outputs__/
+outputs/
+artifacts/
+checkpoints/
+
+# Node/JS (falls vorhanden)
+node_modules/
+dist/
