@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Project Overview
 ![Overview](Overview.png)
 
@@ -37,7 +36,9 @@ Copy the files from `Code used on real robot` to your execution directory and ex
 We provided three example videos to showcase the functionality of our system.
 
 The real execution of the base setup for tower of Hanoi is shown in `Real_Base_720p.mp4`, while another starting state is presented in `Real_Other_Starting.mp4`.
+
 In `Simulation.mp4`, an example of the simulation is shown.
+
 =======
 ## Pull
 docker pull ghcr.io/christopherjaeger/toh_final:latest
@@ -53,4 +54,3 @@ xhost +local:root
 docker run --rm -it \
   -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
   ghcr.io/christopherjaeger/toh_final:latest
->>>>>>> recovery
